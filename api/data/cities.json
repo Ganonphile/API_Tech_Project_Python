@@ -1,0 +1,89 @@
+[
+	{
+		"name": "Chicago, IL",
+		"id": 1,
+		"scores": {
+			"walkability": 1.7,
+			"job_growth": 2.32,
+			"green_space": 0.9,
+			"taxes": 0.6
+		}
+	},
+
+	{
+		"name": "Seattle, WA",
+		"id": 2,
+		"scores": {
+			"walkability": 1.3,
+			"job_growth": 3.1,
+			"green_space": 1.2,
+			"taxes": 0.8
+		}
+	},
+
+	{
+		"name": "San Fransisco, CA",
+		"id": 3,
+		"scores": {
+			"walkability": 1.4,
+			"job_growth": 1.1,
+			"green_space": 1.5,
+			"taxes": 0.3
+		}
+	},
+
+	{
+		"name": "Kansas City, KS",
+		"id": 4,
+		"scores": {
+			"walkability": 0.3,
+			"job_growth": 1.1,
+			"green_space": 1.0,
+			"taxes": 1.3
+		}
+	},
+
+	{
+		"name": "Miami, FL",
+		"id": 5,
+		"scores": {
+			"walkability": 0.3,
+			"job_growth": 1.43,
+			"green_space": 0.9,
+			"taxes": 1.2
+		}
+	},
+
+	{
+		"name": "New York, NY",
+		"id": 6,
+		"scores": {
+			"walkability": 1.5,
+			"job_growth": 1.8,
+			"green_space": 1.4,
+			"taxes": 0.7
+		}
+	},
+
+	{
+		"name": "Detroit, MI",
+		"id": 7,
+		"scores": {
+			"walkability": 0.3,
+			"job_growth": 0.5,
+			"green_space": 0.3,
+			"taxes": 2.0
+		}
+	},
+
+	{
+		"name": "Los Angeles, CA",
+		"id": 8,
+		"scores": {
+			"walkability": 0.2,
+			"job_growth": 1.0,
+			"green_space": 0.7,
+			"taxes": 0.8
+		}
+	}
+]

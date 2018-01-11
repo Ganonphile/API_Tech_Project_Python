@@ -2,6 +2,8 @@ from behave import *
 import sys
 import flask
 
+# These steps are for requirements testing.
+
 @given('we have python 3 installed')
 def python_test(context):
 	#Make sure python 3 is being run. I don't think behave works on python 2,
@@ -21,3 +23,8 @@ def pass_test(context):
 	#states.
 	assert context.failed is False
 
+# Test to be sure the server is running.
+
+@given('the client is running')
+def client_check(context):
+    assert context.api is not False
