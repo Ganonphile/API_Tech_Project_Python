@@ -4,7 +4,6 @@ import flask
 app = flask.Flask(__name__)
 
 error = {}
-error["Errors"] = []
 
 with open("data/cities.json", 'r') as data_file:
     data = json.load(data_file)
@@ -46,26 +45,32 @@ def weigh_city(weights):
     # Also catches more errors.
     
     weights = key_check(weights, "weights")
-    key_verify(weights)
+    if weights == False:
+        error["Errors"] = ["Key is invalid"]
+        return json.dumps(error), 400
 
     # We don't need to perform a value check, as if its not a dictionary, its an invalid
     # json object
     
-    weight_walk = key_check(weights, "walkability")
-    key_verify(weight_walk)
-    print(type(weight_walk))
+    try:
+        weight_walk = weights["walkability"]
+    except KeyError:
+        return json.dumps(error), 400
 
     weight_job = key_check(weights, "job_growth")
-    key_verify(weight_job)
-    value_check(weight_job)
+    if weight_job is False:
+        error["Errors"] = ["Key is invalid"]
+        return json.dumps(error), 400
     
     weight_green = key_check(weights, "green_space")
-    key_verify(weight_green)
-    value_check(weight_green)
+    if weight_green is False:
+        error["Errors"] = ["Key is invalid"]
+        return json.dumps(error), 400
     
     weight_taxes = key_check(weights, "taxes")
-    key_verify(weight_taxes)
-    value_check(weight_taxes)
+    if weight_taxes is False:
+        error["Errors"] = ["Key is invalid"]
+        return json.dumps(error), 400
     
     unsorted_cities = []
     
@@ -89,20 +94,6 @@ def key_check(dictionary, key):
     except:
         return False
     return result
-
-def key_verify(result):
-    if result is False:
-        error_return("Key is invalid")
-
-def value_check(value):
-    if type(value) is not float:
-        error_return("Value is not float")
-
-def error_return(message):
-    print("Made it here", message)
-    error["Errors"] = [message]
-    return json.dumps(error), 400
-
 
 if __name__ == '__main__':
     app.run()
